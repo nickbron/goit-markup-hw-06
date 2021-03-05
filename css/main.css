@@ -1,5 +1,6 @@
 :root {
   --primary-text-color: rgba(33, 33, 33, 1);
+  --border-color: rgba(33, 33, 33, 0.2);
   --dop-text-color: rgba(117, 117, 117, 1);
   --title-text-color: rgba(33, 150, 243, 1);
   --overlay-work-color: rgba(33, 150, 243, 0.9);
@@ -771,6 +772,46 @@ a:link {
   text-decoration: none;
   color: var(--dop-text-color);
   line-height: 1.87;
+}
+
+/* --------------модалка закзать услугу */
+.application-form .input {
+  padding: 11px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.application-form .input:focus,
+.application-form .input:hover {
+  box-shadow: 0 0 0 1px var(--title-text-color);
+}
+
+.application-form .group {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.application-form .label {
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1, 17px;
+  margin-bottom: 4px;
+}
+
+.application-form .input-wrapper {
+  position: relative;
+}
+
+.application-form .icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
 }
 
 .container {
