@@ -412,27 +412,57 @@
                     <use href="./images/icons.svg#icon-close"></use>
                 </svg>
             </button>
+
             <form class="application-form">
+                <h1>Оставьте свои данные, мы вам перезвоним</h1>
                 <div class="group">
                     <label for="fname" class="label">Имя</label>     
                     <div class="input-wrapper">
-                    <input class="input" type="fname" name="fname" id="fname" />
+                        <input class="input" type="fname" name="fname" id="fname" />
                         <svg width="18" height="18" class="icon">
-                        <use href="./images/icons.svg#icon-close"></use>
+                            <use href="./images/icons.svg#icon-person"></use>
                         </svg>
                    </div>
-
                 </div>
+
+
                 <div class="group">
                     <label for="phone" class="label">Телефон</label>
-                    <input class="input" type="phone" name="phone" id="phone" />
+                    <div class="input-wrapper">
+                        <input class="input" type="phone" name="phone" id="phone" />
+                        <svg width="18" height="18" class="icon">
+                            <use href="./images/icons.svg#icon-phone"></use>
+                        </svg>
+                    </div>
                 </div>
+
+
                 <div class="group">
                     <label for="email" class="label">Почта</label>
-                    <input class="input" type="email" name="email" id="email" />
+                    <div class="input-wrapper">
+                        <input class="input" type="email" name="email" id="email" />
+                        <svg width="18" height="18" class="icon">
+                            <use href="./images/icons.svg#icon-email"></use>
+                        </svg>
+                    </div>
                 </div>
+
+                <div class="group">
+                    <label for="comment" class="label"> Комментарий</label>
+                        <textarea class="textarea" name="feedback" rows="5" placeholder="Введите текст"></textarea>
+                    
+               </div>
+
+               <div class="agreement">
+                <input type="checkbox" class="form-input" name="agree" value="agree" id="agree" />
+                <label class="form-label" for="agree">Соглашаюсь с рассылкой и принимаю 
+                    <span class="conditions"> Условия договора </span>
+                </label>
+               
+               </div>
+                <button class="send" type="submit">Отправить</button>
             
-                <button type="submit">Отправить</button>
+                
             
             </form>
 

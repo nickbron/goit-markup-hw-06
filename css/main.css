@@ -2,6 +2,7 @@
   --primary-text-color: rgba(33, 33, 33, 1);
   --border-color: rgba(33, 33, 33, 0.2);
   --dop-text-color: rgba(117, 117, 117, 1);
+  --placeholder-color: rgba(117, 117, 117, 0.5);
   --title-text-color: rgba(33, 150, 243, 1);
   --overlay-work-color: rgba(33, 150, 243, 0.9);
   --hero-color: rgba(47, 48, 58, 1);
@@ -14,6 +15,7 @@
   --header-border: #ececec;
   --bcolor-icon: rgba(255, 255, 255, 0.1);
   --icon-color: rgba(175, 177, 184, 1);
+  --button-send-color: rgba(24, 140, 232, 1);
   --card-set-gap: 30px;
   --card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -59,7 +61,8 @@ img {
 .site-nav .link:hover,
 .site-nav .link:focus,
 .contacts-nav .link:hover,
-.contacts-nav .link:focus {
+.contacts-nav .link:focus
+{
   color: var(--title-text-color);
 }
 
@@ -68,7 +71,8 @@ img {
 }
 
 .site-nav .link,
-.contacts-nav .link {
+.contacts-nav .link 
+{
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
@@ -152,12 +156,12 @@ img {
   align-items: center;
 }
 
-.contacts-nav .item {
+.contacts-nav .icon-cont {
   transition: fill 250ms var(--timing-fn);
 }
 
-.contacts-nav .item:hover,
-.contacts-nav .item:focus {
+.contacts-nav .icon-cont:hover,
+.contacts-nav .icon-cont:focus {
   fill: currentColor;
 }
 
@@ -212,7 +216,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(157, 164, 189, 0.4);
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 1000;
   opacity: 1;
   /* transition: opacity 250ms var(--timing-fn); */
@@ -775,8 +779,15 @@ a:link {
 }
 
 /* --------------модалка закзать услугу */
+.application-form h1 {
+  font-family: inherit;
+  font-size: 20px;
+  line-height: 1.17;
+}
+
 .application-form .input {
-  padding: 11px 12px;
+  padding: 11px;
+  padding-left: 42px;
   border: 1px solid var(--border-color);
   border-radius: 4px;
   outline: none;
@@ -785,15 +796,32 @@ a:link {
   line-height: 1.5;
 }
 
+.application-form .textarea {
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--placeholder-color);
+  margin-bottom: 20px;
+  /* line-height: 1.17px; */
+}
+
 .application-form .input:focus,
 .application-form .input:hover {
-  box-shadow: 0 0 0 1px var(--title-text-color);
+  /* box-shadow: 0 0 0 1px var(--title-text-color); */
+  border-color: var(--title-text-color);
 }
 
 .application-form .group {
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
+}
+
+.application-form .agreement {
+  /* margin-bottom: 10px; */
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 30px;
 }
 
 .application-form .label {
@@ -810,9 +838,58 @@ a:link {
 .application-form .icon {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: 12px;
   transform: translateY(-50%);
 }
+
+.application-form .input:focus + .icon {
+  fill: var(--title-text-color);
+}
+
+.application-form .send {
+   /* display: flex;  */
+  /* display: inline; */
+  /* align-items: center; */
+  /* justify-content: flex-end;  */
+  /* display: block;
+  text-align: center; */
+  
+  padding: 10px 55px;
+  max-width: 200px;
+  height: 50px;
+
+  border-radius: 4px;
+  /* text-align: center; */
+  border: 1px solid transparent;
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+
+  /* background-color: var(--button-send-color); */
+  background-color: var(--title-text-color);
+  color: var(--h-text-color);
+}
+
+.application-form .form-input {
+  width: 16px;
+  height: 15px;
+}
+
+.application-form .form-label {
+  margin-left: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  line-height 1.72;
+}
+
+.application-form .conditions {
+  color: var(--title-text-color);
+  text-decoration: underline;
+}
+
 
 .container {
   margin-left: auto;
