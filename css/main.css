@@ -58,26 +58,15 @@ img {
 }
 
 /* Site nav */
-.site-nav .link:hover,
-.site-nav .link:focus,
-.contacts-nav .link:hover,
-.contacts-nav .link:focus
-{
-  color: var(--title-text-color);
-}
-
 .site-nav .link.current {
   color: var(--title-text-color);
 }
 
-.site-nav .link,
-.contacts-nav .link 
-{
+.site-nav .link {
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
-  letter-spacing: 0.02em;
   color: var(--primary-text-color);
   display: block;
   padding-top: 32px;
@@ -85,9 +74,41 @@ img {
   transition: color 250ms var(--timing-fn);
 }
 
-.contacts-nav .link {
-  color: var(--dop-text-color);
+.site-nav .link:hover,
+.site-nav .link:focus {
+  color: var(--title-text-color);
 }
+
+.contacts-nav .link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--dop-text-color);
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  transition: color 250ms var(--timing-fn), fill 250ms var(--timing-fn);
+}
+
+.contacts-nav .link:hover,
+.contacts-nav .link:focus {
+  color: var(--title-text-color);
+  fill: var(--title-text-color);
+}
+
+/* ---------ИКОНКИ */
+
+.icon-cont {
+  display: inline;
+  margin-right: 10px;
+}
+
+.contacts-nav .item .link {
+  display: flex;
+  align-items: center;
+}
+/* ------------------------ */
 
 .main-nav {
   display: flex;
@@ -129,7 +150,6 @@ img {
   height: 4px;
   background-color: var(--title-text-color);
   border-radius: 2px;
-  /* opacity: 0; */
   transform: scaleX(0);
   transition: transform 250ms var(--timing-fn);
 }
@@ -138,31 +158,6 @@ img {
 .site-nav .link:focus::after,
 .site-nav .link.current::after {
   transform: scaleX(1);
-  /* opacity: 1; */
-}
-
-.site-nav .link.current::after {
-  /* opacity: 1; */
-}
-/* ---------ИКОНКИ */
-
-.icon-cont {
-  display: inline;
-  margin-right: 10px;
-}
-
-.contacts-nav .item .link {
-  display: flex;
-  align-items: center;
-}
-
-.contacts-nav .icon-cont {
-  transition: fill 250ms var(--timing-fn);
-}
-
-.contacts-nav .icon-cont:hover,
-.contacts-nav .icon-cont:focus {
-  fill: currentColor;
 }
 
 /* section hero */
@@ -219,7 +214,6 @@ img {
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 1000;
   opacity: 1;
-  /* transition: opacity 250ms var(--timing-fn); */
 }
 
 .backdrop.is-hidden {
@@ -303,7 +297,6 @@ img {
 .about-card {
   padding: 0;
   display: flex;
-  /* min-width: 1170px; */
 }
 
 .about-card .item {
@@ -546,6 +539,7 @@ img {
 .foot {
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
 }
 
 .logof {
@@ -590,10 +584,6 @@ img {
   margin-bottom: 20px;
 }
 
-.social {
-  margin-left: 156px;
-}
-
 .social-icons li {
   padding: 0;
   margin: 0;
@@ -631,11 +621,42 @@ img {
 .social-icons svg {
   width: 20px;
   fill: white;
-  /* transition: fill 250ms var(--timing-fn); */
 }
 
 .social-icons li:not(:last-child) {
   margin-right: 10px;
+}
+
+/* --------------Подписаться-------------- */
+
+.subscribe .input {
+  width: 358px;
+  height: 50px;
+  padding-left: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: var(--hero-color);
+  border-radius: 4px;
+}
+
+.subscribe-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 12px;
+  width: 200px;
+  height: 50px;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.88;
+  background-color: var(--title-text-color);
+  color: var(--h-text-color);
+  cursor: pointer;
+}
+
+.subscribe-button svg {
+  fill: currentColor;
+  margin-left: 10px;
 }
 
 /* portfolio */
@@ -650,7 +671,6 @@ img {
 }
 
 .buttonp {
-  /* padding-top: 94px; */
   margin-bottom: 50px;
   justify-content: center;
 }
@@ -800,15 +820,27 @@ a:link {
   padding: 12px 16px;
   font-family: inherit;
   font-size: 14px;
+  line-height: 1.17px;
   color: var(--placeholder-color);
   margin-bottom: 20px;
-  /* line-height: 1.17px; */
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  height: 120px;
+  resize: none;
 }
 
 .application-form .input:focus,
-.application-form .input:hover {
-  /* box-shadow: 0 0 0 1px var(--title-text-color); */
+.application-form .input:hover,
+.application-form .textarea:focus,
+.application-form .textarea:hover {
   border-color: var(--title-text-color);
+  cursor: pointer;
+}
+
+.modal .close-button:hover,
+.modal .close-button:focus {
+  fill: var(--title-text-color);
+  cursor: pointer;
 }
 
 .application-form .group {
@@ -818,7 +850,6 @@ a:link {
 }
 
 .application-form .agreement {
-  /* margin-bottom: 10px; */
   display: flex;
   flex-direction: row;
   padding-bottom: 30px;
@@ -847,19 +878,12 @@ a:link {
 }
 
 .application-form .send {
-   /* display: flex;  */
-  /* display: inline; */
-  /* align-items: center; */
-  /* justify-content: flex-end;  */
-  /* display: block;
-  text-align: center; */
-  
+  margin-left: 110px;
   padding: 10px 55px;
   max-width: 200px;
   height: 50px;
 
   border-radius: 4px;
-  /* text-align: center; */
   border: 1px solid transparent;
 
   font-family: inherit;
@@ -867,29 +891,54 @@ a:link {
   font-size: 16px;
   line-height: 1.9;
 
-  /* background-color: var(--button-send-color); */
   background-color: var(--title-text-color);
   color: var(--h-text-color);
 }
 
-.application-form .form-input {
-  width: 16px;
-  height: 15px;
+.application-form .send:hover {
+  background-color: var(--button-send-color);
+  cursor: pointer;
 }
 
-.application-form .form-label {
-  margin-left: 5px;
+/* -----------------checkbox------------------- */
+
+.application-form .check {
+  display: flex;
+  align-items: center;
   cursor: pointer;
   font-family: inherit;
   font-size: 14px;
-  line-height 1.72;
+  line-height: 1.72;
 }
 
-.application-form .conditions {
-  color: var(--title-text-color);
+.agreement a {
   text-decoration: underline;
 }
 
+.check-icon {
+  margin-right: 7px;
+  border: 2px solid #2a2a2a;
+  border-radius: 2px;
+}
+
+.check-icon use {
+  display: none;
+}
+
+.application-form .check-input:checked + .check-icon {
+  border: none;
+}
+
+.application-form .check-input:checked + .check-icon use {
+  display: block;
+}
+
+.check-input {
+  appearance: none;
+  position: absolute;
+}
+
+/* ------------------------ */
 
 .container {
   margin-left: auto;
