@@ -179,6 +179,8 @@ img {
 }
 
 .hero-title {
+  max-width: 696px;
+  margin: 0 auto;
   margin-top: 0;
   margin-bottom: 30px;
   color: var(--h-text-color);
