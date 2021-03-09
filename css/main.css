@@ -816,6 +816,8 @@ a:link {
   font-family: inherit;
   font-size: 14px;
   line-height: 1.5;
+  width: 448px;
+  height: 40px;
   transition: border-color 250ms var(--timing-fn);
 }
 
@@ -878,7 +880,8 @@ a:link {
   transition: fill 250ms var(--timing-fn);
 }
 
-.application-form .input:focus + .icon {
+.application-form .input:focus + .icon,
+.application-form .input:hover + .icon {
   fill: var(--title-text-color);
 }
 
