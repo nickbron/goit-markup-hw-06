@@ -536,43 +536,33 @@ img {
   padding: 0;
   margin: 0;
   display: inline-block;
-  justify-content: left;
-  align-items: left;
   width: 44px;
   height: 44px;
-  fill: currentColor;
   border-radius: 50%;
   background-color: var(--bcolor-icon);
 }
 
-.social-icons a,
-.social-icons svg {
+.social-icons li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-icons a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: inherit;
-  width: inherit;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: background-color 250ms var(--timing-fn);
 }
 
 .social-icons a:hover,
 .social-icons a:focus {
   background-color: var(--title-text-color);
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-}
-
-.social-icons a {
-  transition: background-color 250ms var(--timing-fn);
 }
 
 .social-icons svg {
-  width: 20px;
   fill: white;
-}
-
-.social-icons li:not(:last-child) {
-  margin-right: 10px;
 }
 
 /* --------------Подписаться-------------- */
@@ -924,6 +914,7 @@ a:link {
 
 .agreement a {
   text-decoration: underline;
+  color: var(--title-text-color);
 }
 
 .check-icon {
