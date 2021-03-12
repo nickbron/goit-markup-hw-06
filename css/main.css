@@ -389,33 +389,33 @@ img {
 }
 
 /* -------Иконки Соц сетей-------- */
-.social-link {
-  padding: 0;
-  display: flex;
-}
-
 .social-link li {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
   width: 44px;
   height: 44px;
   border-radius: 50%;
   background-color: var(--bcolor-icon);
 }
 
-.social-link a,
-.social-link svg {
+.social-link li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-link a {
   display: flex;
   justify-content: center;
   align-items: center;
   height: inherit;
   width: inherit;
+  border-radius: 50%;
+  transition: background-color 250ms var(--timing-fn);
 }
 
 .social-link a:hover,
 .social-link a:focus {
   background-color: var(--title-text-color);
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
 }
 
 .social-link a:hover svg,
@@ -424,13 +424,8 @@ img {
 }
 
 .social-link svg {
-  width: 20px;
   fill: var(--icon-color);
   transition: fill 250ms var(--timing-fn);
-}
-
-.social-link li:not(:last-child) {
-  margin-right: 10px;
 }
 
 /* ----Постоянные клиенты */
@@ -448,21 +443,6 @@ img {
   margin-left: calc(-1 * var(--card-set-gap));
 }
 
-.our-clients-card li svg {
-  fill: var(--icon-color);
-  transition: fill 250ms var(--timing-fn);
-}
-
-.our-clients-card li:hover svg,
-.our-clients-card li:focus svg {
-  fill: var(--title-text-color);
-}
-
-.our-clients-card li:hover,
-.our-clients-card li:focus {
-  border: 1px solid var(--title-text-color);
-}
-
 .our-clients-card li {
   display: flex;
   flex-basis: calc(100% / 6 - var(--card-set-gap));
@@ -475,6 +455,21 @@ img {
   border-radius: 4px;
   border: 1px solid var(--icon-color);
   transition: border 250ms var(--timing-fn);
+}
+
+.our-clients-card li svg {
+  fill: var(--icon-color);
+  transition: fill 250ms var(--timing-fn);
+}
+
+.our-clients-card li:hover,
+.our-clients-card li:focus {
+  border: 1px solid var(--title-text-color);
+}
+
+.our-clients-card li:hover svg,
+.our-clients-card li:focus svg {
+  fill: var(--title-text-color);
 }
 
 /* section foot */
@@ -550,8 +545,8 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 44px;
-  height: 44px;
+  width: inherit;
+  height: inherit;
   border-radius: 50%;
   transition: background-color 250ms var(--timing-fn);
 }
